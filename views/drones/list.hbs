@@ -1,13 +1,18 @@
 <h2>Available drones</h2>
+
   {{#each response}}
 
     {{!-- <h4>{{this.name}}</h4> --}}
-    <h4><a href="/drones/{{this._id}}">{{this.name}}</a></h4>
+    <b><p>{{this.name}}</p></b>
 
-    <h4><a href="/drones/{{this._id}}">{{this.propellers}}</a></h4>
+    <p>-{{this.propellers}}</p>
 
-   <h4><a href="/drones/{{this._id}}">{{this.maxSpeed}}</a></h4>
+    <p>-{{this.maxSpeed}}</p>
 
-   
-    <h4><a href="/drones/{{_id}}/edit">Editar</a></h4>  
+    <a href="/drones/{{this._id}}/edit">Editar</a>
+
+    <form action='/drones/{{_id}}/delete' method="POST">
+      <button type="submit">Borrar</button>
+    </form>
+
   {{/each}}
